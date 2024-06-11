@@ -6,26 +6,25 @@ function App() {
 
   const setCookie = async () => {
     try {
-      // const response = await axios.post("http://localhost:3000/set-cookie", {
+      // const response = await axios.post("http://localhost:5000/set-cookie", {
       //   withCredentials: true,
       // });
 
-      const response = await fetch("/api/set-cookie",{
-        credential:"include",
-        method:"POST"
-      })
+      const response = await fetch("/api/set-cookie", {
+        credential: "include",
+        method: "POST",
+      });
 
-      if(!response.ok){
-        throw new Error("cors")
+      if (!response.ok) {
+        throw new Error("cors");
       }
-    
     } catch (error) {
       console.log("Error occured while connecting with backend", error);
     }
   };
   const sayHello = async () => {
     try {
-      const response = await axios.post("http://localhost:3000");
+      const response = await axios.post("http://localhost:5000");
       console.log(response.data);
       sethelloMessage(response.data);
     } catch (error) {
